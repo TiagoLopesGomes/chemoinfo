@@ -137,7 +137,7 @@ For future work the model could be improved by using exploring different solutio
 
 ## Alternative implementations
 
-This was an implementation from scratch of the multitask DNN model on the KinDel dataset. Please check my other repository where I modified the insitro code available [here](https://github.com/insitro/kindel).
+This was an implementation from scratch of the multitask DNN model on the KinDel dataset. Please check my other [repository](https://github.com/TiagoLopesGomes/kindel) where I modified the insitro code available [here](https://github.com/insitro/kindel).
 
 ## Acknowledgments
 
