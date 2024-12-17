@@ -96,7 +96,7 @@ Here, it is reported the MSE (mean squared error) for the training, validation a
 The plots indicate the model-predicted enrichment values versus experimental Kd values (higher enrichment values indicate lower Kd values). It is also reported the Spearman and Pearson correlation coefficients for extended and in-library and on-DNA and off-DNA datasets.
 
 
-Results are saved in the results folder for both binary and human-readable formats YAML formats, together with generated plots generated, and presented below:
+Results are saved in the results folder for both binary and human-readable YAML formats, together with generated plots, and presented below:
 - On-DNA predictions
 - Off-DNA predictions
 - Training/validation/test metrics
@@ -104,18 +104,18 @@ Results are saved in the results folder for both binary and human-readable forma
 
 -----
 \
-*Held-out extended dataset*
+*Held-out in-Library dataset*
 
 ![Training Results](/results/multitask_regression/ddr1_predictions_lib_all.png)
 \
 \
-*Held-out in-library dataset predictions*
+*Held-out extended dataset*
 
 ![Library Results](/results/multitask_regression/ddr1_predictions_extended.png)
 
 
 
-- As expected, the multitask DNN model performs best on the on-DNA dataset with higher Spearman correlation coefficients than the off-DNA dataset. The Spearman coeficients, for on-DNA datasets, rivals the authors best results of around 0.7. The results worsen for the off-DNA dataset, with a Spearman coefficient of around 0.4, being worse than the original insitro implementation for all models tried. Bear in mind that the reported Spearman is negative because higher enrichment corresponds to higher affinity, hence lower Kd. Reported is the 1/Kd to aid visualization. Overall the model performed reasonably well with Spearman metrics rivalling the authors original implementation.
+- As expected, the multitask DNN model performs best on the on-DNA dataset with higher Spearman correlation coefficients than the off-DNA dataset. The Spearman coeficients, for on-DNA datasets, rivals the authors best results of  ~0.7. The results worsen for the off-DNA dataset, with a Spearman coefficient of ~0.5, being worse than the original insitro implementation for all models tried. Bear in mind that the reported Spearman is negative because higher enrichment corresponds to higher affinity, hence lower Kd. Reported is the 1/Kd to aid visualization. Overall the model performed reasonably well with Spearman metrics rivalling the authors original implementation.
 
 Take-home messages:
 
@@ -126,8 +126,8 @@ Take-home messages:
 
 For future work the model could be improved by using exploring different solutions:
 
-- For the off-DNA dataset we observe an outlier (ca. 1.2), so removing these outliers could  improve the Spearman coeficient.
-- One could also try to use different featurizers, like the ones refered above for the other models. We could also combine fingerprints with descriptors that are used to assess molecule druglikeness (e.g qed).
+- For the off-DNA dataset we observe an outlier (~1.2), so removing these outliers could  improve the Spearman coeficient.
+- One could also try to use different featurizers, like the ones refered above for the other models. We could also combine fingerprints with descriptors that are used to assess molecule druglikeness (e.g. qed).
 - Here I peformed random splits. Using disynthon splits could also improve the results.
 - Experiment with deeper networks for more complex feature hierarchies, expecially with the disynthon splits.
 - Check more thoroughly for over-fitting (inspite train, valid and test MSE's being similar), by adding regularization or e.g early-stopping.
