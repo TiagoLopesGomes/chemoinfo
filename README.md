@@ -105,10 +105,14 @@ Results are saved in the results folder for both binary and human-readable forma
 -----
 \
 *Held-out extended dataset*
-![Training Results](/results/multitask_regression/ddr1_predictions_lib_all.png)
 
+![Training Results](/results/multitask_regression/ddr1_predictions_lib_all.png)
+\
+\
 *Held-out in-library dataset predictions*
-![Library Results](/kindel_ai/results/multitask_regression/)
+
+![Library Results](/results/multitask_regression/ddr1_predictions_extended.png)
+
 
 
 - As expected, the multitask DNN model performs best on the on-DNA dataset with higher Spearman correlation coefficients than the off-DNA dataset. The Spearman coeficients, for on-DNA datasets, rivals the authors best results of around 0.7. The results worsen for the off-DNA dataset, with a Spearman coefficient of around 0.4, being worse than the original insitro implementation for all models tried. Bear in mind that the reported Spearman is negative because higher enrichment corresponds to higher affinity, hence lower Kd. Reported is the 1/Kd to aid visualization. Overall the model performed reasonably well with Spearman metrics rivalling the authors original implementation.
